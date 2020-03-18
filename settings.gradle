@@ -1,0 +1,2 @@
+rootProject.name='Hydroponics_Garden'
+include ':app'

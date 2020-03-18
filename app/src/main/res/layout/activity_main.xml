@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_anchor="@+id/constraintLayout"
+        app:layout_anchorGravity="center"><![CDATA[
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ]]>
+
+
+        <ProgressBar
+            android:id="@+id/monthProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="225dp"
+            android:layout_height="224dp"
+            android:layout_marginTop="72dp"
+            android:indeterminate="false"
+
+            android:max="1000"
+            android:progress="0"
+            android:progressDrawable="@drawable/circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/goToMoreInformation"
+            android:layout_width="111dp"
+            android:layout_height="111dp"
+            android:layout_marginTop="132dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/leaf" />
+
+        <TextView
+            android:id="@+id/NextWaterChangeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:text="Days to Next Water Change"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.13"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/monthProgress" />
+
+        <ProgressBar
+            android:id="@+id/nextWaterChangeProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="345dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="16dp"
+            android:background="#00787676"
+            android:max="100"
+            android:progress="0"
+            android:scaleY="7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/NextWaterChangeText" />
+
+        <TextView
+            android:id="@+id/pHLevelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="20dp"
+            android:text="pH Level"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nextWaterChangeProgressBar" />
+
+        <TextView
+            android:id="@+id/pHLevelOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="20dp"
+            android:text="N/A"
+            app:layout_constraintStart_toEndOf="@+id/pHLevelText"
+            app:layout_constraintTop_toBottomOf="@+id/nextWaterChangeProgressBar" />
+
+        <TextView
+            android:id="@+id/waterLevelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="20dp"
+            android:text="Water Level"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pHLevelText" />
+
+        <ProgressBar
+            android:id="@+id/waterLevelProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="345dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="16dp"
+            android:scaleY="7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/waterLevelText" />
+
+        <TextView
+            android:id="@+id/temperatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="20dp"
+            android:text="Temperature"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/waterLevelProgressBar" />
+
+        <TextView
+            android:id="@+id/temperatureOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="20dp"
+            android:text="N/A"
+            app:layout_constraintStart_toEndOf="@+id/temperatureText"
+            app:layout_constraintTop_toBottomOf="@+id/waterLevelProgressBar" />
+
+        <ImageView
+            android:id="@+id/currentDay"
+            android:layout_width="34dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="176dp"
+            app:layout_constraintBottom_toBottomOf="@+id/monthProgress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.201"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023"
+            app:srcCompat="@drawable/day" />
+
+        <ImageView
+            android:id="@+id/waterDay1"
+            android:layout_width="30dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="232dp"
+            android:scaleType="centerInside"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.556"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/day14" />
+
+        <ImageView
+            android:id="@+id/waterDay2"
+            android:layout_width="34dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="64dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.397"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/day28" />
+
+        <TextView
+            android:id="@+id/nextWaterChangeDaysLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6 days until next water change"
+            app:layout_constraintBottom_toBottomOf="@+id/nextWaterChangeProgressBar"
+            app:layout_constraintEnd_toEndOf="@+id/nextWaterChangeProgressBar"
+            app:layout_constraintStart_toStartOf="@+id/nextWaterChangeProgressBar"
+            app:layout_constraintTop_toTopOf="@+id/nextWaterChangeProgressBar" />
+
+        <TextView
+            android:id="@+id/waterLevelProgressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="90%"
+            app:layout_constraintBottom_toBottomOf="@+id/waterLevelProgressBar"
+            app:layout_constraintEnd_toEndOf="@+id/waterLevelProgressBar"
+            app:layout_constraintStart_toStartOf="@+id/waterLevelProgressBar"
+            app:layout_constraintTop_toTopOf="@+id/waterLevelProgressBar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
